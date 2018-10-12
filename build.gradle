@@ -3,6 +3,7 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '1.2.70'
+    ext.arrow_version = '0.7.3'
 
     repositories {
         mavenCentral()
@@ -49,6 +50,15 @@ dependencies {
     compile "org.openrndr:openrndr-extensions:$openrndrVersion"
     compile "org.openrndr:openrndr-filter:$openrndrVersion"
     compile('org.openrndr.panel:openrndr-panel:0.3.3')
+
+    compile "io.arrow-kt:arrow-core:$arrow_version"
+    compile "io.arrow-kt:arrow-syntax:$arrow_version"
+    compile "io.arrow-kt:arrow-typeclasses:$arrow_version"
+    compile "io.arrow-kt:arrow-data:$arrow_version"
+    compile "io.arrow-kt:arrow-instances-core:$arrow_version"
+    compile "io.arrow-kt:arrow-instances-data:$arrow_version"
+    kapt    "io.arrow-kt:arrow-annotations-processor:$arrow_version"
+    
     compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: '0.30.2'
     compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core-common', version: '0.30.2'
 }
